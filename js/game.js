@@ -211,7 +211,7 @@ $(function() {
                 showToast('Błąd podczas dodawania do koszyka', 'error');
             }
         }, 'json').fail(function() {
-            showToast('Błąd połączenia', 'error');
+            showToast('Brak dostępnych kluczy!', 'error');
         }).always(function() {
             if (!$btn.hasClass('in-cart')) {
                 $btn.prop('disabled', false).html('<i class="fas fa-cart-plus me-2"></i>Dodaj do koszyka');
@@ -236,7 +236,7 @@ $(function() {
                 }
             }
         }, 'json').fail(function() {
-            showToast('Błąd połączenia', 'error');
+            showToast('Brak dostępnych', 'error');
         });
     });
 
