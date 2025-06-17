@@ -150,5 +150,19 @@ if (isset($_POST['checkout']) && count($games) > 0) {
         </div>
     <?php endif; ?>
 </div>
+<script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+<script>
+    const lenis = new Lenis({
+  lerp: 0.1, // im niższa wartość, tym większe spowolnienie scrolla
+  wheelMultiplier: 1
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+</script>
 </body>
 </html>
