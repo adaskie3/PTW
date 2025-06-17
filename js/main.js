@@ -185,3 +185,15 @@ document.addEventListener('DOMContentLoaded', function() {
         checkBackToTop();
     }
 });
+
+const lenis = new Lenis({
+  lerp: 0.1, // im niższa wartość, tym większe spowolnienie scrolla
+  wheelMultiplier: 1
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
