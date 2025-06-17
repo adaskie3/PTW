@@ -1,0 +1,513 @@
+:root {
+    --space-bg: #0a0e14;
+    --neon-primary: #00f3ff;
+    --neon-secondary: #ff00ff;
+    --card-bg: #23272b;
+    --table-header-bg: #181a1b;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --text-font: 'Exo 2', sans-serif;
+}
+
+body {
+    background: var(--space-bg);
+    color: #e0e0e0;
+    font-family: var(--text-font);
+    min-height: 100vh;
+}
+
+.cart-container, .profile-container {
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #00f3ff22;
+    padding: 36px 28px 32px 28px;
+    max-width: 900px;
+    margin: 48px auto 0 auto;
+}
+
+h2, h4 {
+    color: var(--neon-primary);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.6em;
+}
+
+.table {
+    background: none;
+    color: #e0e0e0;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.table thead th {
+    background: var(--table-header-bg);
+    color: var(--neon-primary);
+    border: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.02em;
+}
+
+.profile-table th:first-child,
+.profile-table td:first-child {
+    text-align: center;
+}
+
+.profile-table th:nth-child(2),
+.profile-table td:nth-child(2) {
+    word-break: break-word;
+    white-space: normal;
+}
+
+.profile-table th:last-child,
+.profile-table td:last-child {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background: #20232a;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+    background: #23272b;
+}
+
+.table td, .table th {
+    border: none;
+    vertical-align: middle;
+    padding: 18px 14px;
+}
+
+.profile-table img, .table img {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00f3ff33;
+    border: 2px solid var(--neon-primary);
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.badge.bg-success {
+    background: var(--neon-primary) !important;
+    color: #181a1b !important;
+    font-size: 1.02em;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 0.6em 1.1em;
+    letter-spacing: 0.03em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.cart-summary, .total-price {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--neon-primary);
+    text-align: right;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.btn {
+    font-family: var(--text-font);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.7em 2.1em;
+    font-size: 1.08em;
+    transition: background 0.16s, color 0.16s, box-shadow 0.18s, border 0.18s, transform 0.12s;
+    box-shadow: 0 2px 12px #00f3ff33;
+    border: none;
+}
+
+.btn-success, .btn-primary {
+    background: var(--neon-primary);
+    color: #181a1b;
+}
+.btn-success:hover, .btn-primary:hover {
+    background: #181a1b;
+    color: var(--neon-primary);
+    border: 2px solid var(--neon-primary);
+    box-shadow: 0 4px 24px #00f3ff44;
+    transform: scale(1.04);
+}
+.btn-danger {
+    background: var(--danger);
+    color: #fff;
+}
+.btn-danger:hover {
+    background: #c0392b;
+    color: #fff;
+    transform: scale(1.04);
+}
+.btn-outline-secondary, .btn-secondary {
+    background: #23272b;
+    color: #aaa;
+    border: 2px solid #444;
+}
+.btn-outline-secondary:hover, .btn-secondary:hover {
+    background: #181a1b;
+    color: #fff;
+    border-color: var(--neon-primary);
+}
+
+.copy-btn {
+    background: #181a1b;
+    color: var(--neon-primary);
+    border: 1.5px solid var(--neon-primary);
+    border-radius: 7px;
+    padding: 0.4em 1.2em;
+    cursor: pointer;
+    font-size: 0.98em;
+    font-weight: 600;
+    transition: background 0.14s, color 0.14s;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 80px;
+}
+.copy-btn:hover {
+    background: var(--neon-primary);
+    color: #181a1b;
+}
+
+.empty-message {
+    color: #aaa;
+    font-size: 1.2em;
+    margin: 60px 0 40px 0;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .cart-container, .profile-container {
+        padding: 24px 6px 24px 6px;
+        max-width: 99vw;
+    }
+    .table td, .table th {
+        padding: 12px 6px;
+    }
+    
+    .profile-table th:last-child,
+    .profile-table td:last-child {
+        width: 180px;
+        min-width: 180px;
+    }
+    
+    .profile-table th:nth-child(2),
+    .profile-table td:nth-child(2) {
+        max-width: 200px;
+    }
+}
+
+.table-dark {
+    --bs-table-bg: #23272b;
+    --bs-table-striped-bg: #20232a;
+    --bs-table-hover-bg: #181a1b;
+    color: #e0e0e0;
+    border-color: #23272b;
+}
+.table-dark th, .table-dark td {
+    background-color: inherit !important;
+    color: #e0e0e0;
+}
+.table-hover > tbody > tr:hover {
+    background-color: #181a1b !important;
+    transition: background 0.18s;
+}
+
+.btn-remove {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.16s, box-shadow 0.18s, transform 0.12s;
+    box-shadow: 0 2px 8px #ff3c3c33;
+    padding: 0;
+}
+
+.trash-icon svg {
+    display: block;
+}
+
+.trash-lid {
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1);
+    transform-origin: 18px 10px;
+}
+
+.btn-remove:hover .trash-lid,
+.btn-remove:focus .trash-lid {
+    transform: rotate(-35deg);
+}
+
+.btn-remove:hover, .btn-remove:focus {
+    background: #ff3c3c22;
+    box-shadow: 0 4px 18px #ff3c3c66;
+    transform: scale(1.08);
+}
+
+/* Game Page */
+.game-container {
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #00f3ff22;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.game-image-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--neon-primary);
+    box-shadow: 0 0 24px #00f3ff33;
+    margin-bottom: 2rem;
+}
+
+.star-rating {
+    --star-size: 2rem;
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.star-rating .star {
+    font-size: var(--star-size);
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.star-rating .star.filled,
+.star-rating .star:hover {
+    color: var(--neon-primary);
+    text-shadow: 0 0 12px #00f3ff66;
+}
+
+/* Ulubione - strona */
+.favorites-container {
+    max-width: 1200px;
+}
+
+.favorite-game-card {
+    background: #181a1b;
+    border: 2px solid var(--neon-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.favorite-game-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 24px #00f3ff33;
+}
+
+/* Sekcja recenzji */
+.review-card {
+    background: #1e2124;
+    border: 1px solid #2ecbfa22;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-form {
+    background: var(--table-header-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--neon-primary);
+}
+
+.review-game-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--neon-primary);
+}
+
+.review-list {
+    background: #181a1b;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.review-content {
+    background: #23272b;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #2ecbfa22;
+}
+
+/* Elementy AJAX */
+.ajax-loading {
+    position: relative;
+    opacity: 0.7;
+}
+
+.ajax-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--neon-primary);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.favorite-btn {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--neon-primary) !important;
+}
+
+.favorite-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 25%,
+        #00f3ff22 50%,
+        transparent 75%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.favorite-btn:hover::before {
+    opacity: 1;
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 1rem;
+    }
+}
+
+/* Sekcja szczegółów gry */
+.game-container {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.game-detail-image {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid var(--neon-primary);
+    box-shadow: 0 0 24px #00f3ff33;
+}
+
+.no-image-placeholder {
+    background: #181a1b;
+    border-radius: 12px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neon-title {
+    color: var(--neon-primary);
+    text-shadow: 0 0 12px #00f3ff66;
+}
+
+.btn-favorite {
+    background: none;
+    border: 2px solid var(--neon-primary);
+    color: var(--neon-primary);
+    transition: all 0.3s;
+}
+
+.btn-favorite.active {
+    background: var(--neon-primary) !important;
+    color: #181a1b !important;
+}
+
+.rating-input .stars {
+    font-size: 1.5em;
+}
+
+.rating-input .star {
+    cursor: pointer;
+    color: #444;
+}
+
+.rating-input .star i.fas {
+    color: var(--neon-primary);
+}
+
+/* FLEX dla kolumny z kluczem i przyciskiem */
+.key-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    max-width: 100%;
+}
+
+.profile-table td:last-child,
+.profile-table th:last-child {
+    text-align: left;
+    vertical-align: middle;
+    padding-right: 14px;
+    padding-left: 14px;
+}
+
+/* Badge i przycisk zawsze w jednej linii */
+.badge.bg-success {
+    background: var(--neon-primary) !important;
+    color: #181a1b !important;
+    font-size: 1.02em;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 0.6em 1.1em;
+    letter-spacing: 0.03em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+.copy-btn {
+    background: #181a1b;
+    color: var(--neon-primary);
+    border: 1.5px solid var(--neon-primary);
+    border-radius: 7px;
+    padding: 0.4em 1.2em;
+    cursor: pointer;
+    font-size: 0.98em;
+    font-weight: 600;
+    transition: background 0.14s, color 0.14s;
+    min-width: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.copy-btn:hover {
+    background: var(--neon-primary);
+    color: #181a1b;
+}
